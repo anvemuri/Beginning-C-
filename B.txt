@@ -1,0 +1,62 @@
+/*
+Assignment B, Part 1
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+  char letter;
+  int number;
+  double decimalNumber;
+  cout << "Please input a letter: " << endl;
+  cin >> letter;
+  number = letter;
+  decimalNumber= number;
+  cout << "Character: " << letter << endl;
+  cout << "Number Value: " << number << endl;
+  cout << "Decimal Value: " << decimalNumber << endl;
+  return 0;
+}
+/*
+Expected result:
+
+Please input a letter: 
+a
+Character: a
+Number Value: 97
+Decimal Value: 97
+
+Please input a letter: 
+A
+Character: A
+Number Value: 65
+Decimal Value: 65
+
+*/
+
+
+
+/*
+Assignment B, Part 2
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string string1 = "The Wizard of Oz";
+    string string2 = "Stagecoach";
+    string string3 = "Gosford Park";
+    cout << string1 << endl;
+    cout << string2 << endl;
+    cout << string3 << endl;
+    return 0;
+}
+/*
+Expected output:
+The Wizard of Oz
+Stagecoach
+Gosford Park
+*/
+

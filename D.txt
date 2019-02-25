@@ -1,0 +1,108 @@
+/*
+Assignment D, Part 1
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+    double mass, velocity, momentum, ke;
+    cout << "Please input the mass of the object in kilograms: ";
+    cin >> mass;
+    cout << "Please input the velocity of the object in meters per second: ";
+    cin >> velocity;
+    momentum = mass * velocity;
+    ke = (mass * (pow(velocity, 2) / 2));
+    cout << "The mass is: " << setw (19) 
+        << fixed << setprecision(2) << mass << " Kilograms" << endl;
+        
+    cout << "The velocity is: " << setw (15) 
+        << fixed << setprecision(2) << velocity << " m/s" << endl;
+        
+    cout << "The Momentum is: " << setw (15) 
+        << fixed << setprecision(2) << momentum << " Kg m/s" << endl;
+        
+    cout << "The Kinetic Energy is: " << setw (9) 
+        << fixed << setprecision(2) << ke << " Joules" << endl;
+    
+    return 0;
+}
+/*
+execution results:
+
+Please input the mass of the object in kilograms: 5
+Please input the velocity of the object in meters per second: 4
+The mass is:                5.00 Kilograms
+The velocity is:            4.00 m/s
+The Momentum is:           20.00 Kg m/s
+The Kinetic Energy is:     40.00 Joules
+
+Please input the mass of the object in kilograms: 3.15
+Please input the velocity of the object in meters per second: 10
+The mass is:                3.15 Kilograms
+The velocity is:           10.00 m/s
+The Momentum is:           31.50 Kg m/s
+The Kinetic Energy is:    157.50 Joules
+
+*/
+
+
+
+/*
+Assignment D, Part 2
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int main(){
+    const double SMALL = 9.20;
+    const double MEDIUM = 8.52;
+    const double LARGE = 7.98;
+    int sBox, mBox, lBox; 
+    double tSBox, tMBox, tLBox, total;
+    cout << "Please input the number of small boxes you wish to purchase: ";
+    cin >> sBox;
+    tSBox = sBox * SMALL;
+    cout << "Please input the number of medium boxes you wish to purchase: ";
+    cin >> mBox;
+    tMBox = mBox * MEDIUM;
+    cout << "Please input the number of large boxes you wish to purchase: ";
+    cin >> lBox;
+    tLBox = lBox * LARGE;
+    cout << endl;
+    total = tSBox + tMBox+ tLBox;
+
+    cout << "SIZE" << setw(15) << "BOXES" << setw(20) 
+        << "COST PER BOX" << setw(10) << "TOTALS" << endl;
+    cout << "Small" << setw(14) << fixed 
+        << setprecision(2) << sBox << setw(20) << SMALL << setw(10) << tSBox << endl;  
+    cout << "Medium" << setw(13) << fixed 
+        << setprecision(2) << mBox << setw(20) << MEDIUM << setw(10) << tMBox << endl;
+    cout << "Large" << setw(14) << fixed 
+        << setprecision(2) << lBox << setw(20) << LARGE << setw(10) << tLBox << endl;
+    cout << "TOTAL" << setw(44) << fixed << setprecision(2) << total;
+    return 0;
+}
+/*
+
+Execution Results:
+
+Please input the number of small boxes you wish to purchase: 9
+Please input the number of medium boxes you wish to purchase: 8
+Please input the number of large boxes you wish to purchase: 7
+
+SIZE          BOXES        COST PER BOX    TOTALS
+Small             9                9.20     82.80
+Medium            8                8.52     68.16
+Large             7                7.98     55.86
+TOTAL                                      206.82 
+
+*/

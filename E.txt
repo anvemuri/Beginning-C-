@@ -1,0 +1,127 @@
+/*
+Assignment E, Part 1
+*/
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cmath>
+using namespace std;
+double a,b,c;
+
+int main(){
+    double a,b,c,disc,ans_1, ans_2;
+    string answer;
+    cout << "Please input A, B, and C: ";
+    cin >> a; cin >> b; cin >> c;
+    
+    if ((a == 0 && a == b && b == c) || (a == 0 && a == b && a != c) || (a == 0 && a != b)){
+        if (a == 0 && a == b && b == c){cout << "Any value of x is a solution" << endl;}
+        if (a == 0 && a == b && a != c){cout << "No solution exists" << endl;}
+        if (a == 0 && a != b){cout << "The solution is: " << 
+            setw(8)<< fixed << setprecision(2) << -c/b << endl;
+            }
+    }
+   
+    else{
+        disc = pow(b,2)-(4*a*c);
+        if (disc == 0){
+            ans_1 = -b / (2 * a);
+            cout << "The answer is: " << setw(8)<< fixed << setprecision(2) << ans_1;
+        }
+        if (disc > 0){
+            ans_1 = (-b + sqrt(pow(b,2) - 4*a*c))/(2*a);
+            ans_2 = (-b - sqrt(pow(b,2) - 4*a*c))/(2*a);
+            cout << "The first answer is: " << setw(8)<< fixed << setprecision(2) << ans_1 << endl;
+            cout << "The second answer is: " << setw(7)<< fixed << setprecision(2) << ans_2 << endl;
+        }
+        if (disc < 0){
+            cout << "The solutions have an imaginary component";
+            
+        }
+    }
+    return 0;
+}
+/*
+Expected Results:
+Please input A, B, and C: 0 0 0
+Any value of x is a solution
+
+Please input A, B, and C: 0 0 4
+No solution exists
+
+Please input A, B, and C: 0 8 -12
+The solution is:     1.50
+
+Please input A, B, and C: 2 4 2
+The answer is:    -1.00 
+
+Please input A, B, and C: 0 8 -12
+The solution is:     1.50
+
+Please input A, B, and C: 0 8 -12
+The solution is:     1.50
+
+Please input A, B, and C: 1 1 1
+The solutions have an imaginary component 
+*/
+
+
+
+
+/*
+Assignment E, Part 2
+*/
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cmath>
+using namespace std;
+
+
+
+int main(){
+    double t_1, t_2, t_3, as_Avg, av_Test, as_Ti, as_Tt;
+    string grade;
+    cout << "Please in put three test scores: " << endl;
+    cin >> t_1; cin >> t_2; cin >> t_3;
+    av_Test = ((t_1 + t_2 + t_3)/3);
+    if (av_Test < 70 && av_Test > 60){
+        cout << "Please input how many assignments have been turned in out of total assignments: ";
+        cin.ignore();
+        cin >> as_Ti;
+        cin >> as_Tt;
+        as_Avg = (as_Ti/as_Tt)*100;
+        if (as_Avg < 80){grade = "F";}
+        else{grade = "D";}
+        cout << "The student has a " << grade;
+    }
+    if (av_Test >= 70 && av_Test < 80){cout << "The student has a C";}
+    if (av_Test >= 80 && av_Test < 90){cout << "The student has a B";}
+    if (av_Test >= 90){cout << "The student has a A";}
+
+
+    return 0;
+}
+/*
+Expected Results:
+
+Please in put three test scores: 
+96 84 90
+The student has a A 
+
+Please in put three test scores: 
+95 83 90
+The student has a B 
+
+Please in put three test scores: 
+70 59 60
+Please input how many assignments have been turned in out of total assignments: 5 6
+The student has a D 
+
+Please in put three test scores: 
+73 58 65
+Please input how many assignments have been turned in out of total assignments: 8 11
+The student has a F 
+*/
+
+

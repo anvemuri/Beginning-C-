@@ -1,0 +1,118 @@
+/*
+Assignment C, Part 1
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+int main()
+{
+    double celsius, fahrenheit;
+    cout << "Please input a temperature in Celsius" << endl;
+    cin >> celsius;
+    
+    cout << "The temperature in Celsius is " << setw(10) << 
+fixed << setprecision(1) << celsius << endl;
+   
+    fahrenheit = (celsius * 9/5) + 32;
+    cout <<  "The temperature in Fahrenheit is " << setw(7) << 
+fixed << setprecision(1) << fahrenheit << " degrees" << endl;
+
+    return 0;
+}
+/*
+Expected result:
+
+Please input a temperature in Celsius
+37.778
+The temperature in Celsius is       37.8
+The temperature in Fahrenheit is   100.0 degrees
+
+Please input a temperature in Celsius
+-40
+The temperature in Celsius is      -40.0
+The temperature in Fahrenheit is   -40.0 degrees
+
+Please input a temperature in Celsius
+0
+The temperature in Celsius is        0.0
+The temperature in Fahrenheit is    32.0 degrees
+
+*/
+
+
+
+/*
+Assignment C, Part 2
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+int main()
+{
+    string name;
+    cout << "Please input a name: " << endl;
+    getline(cin, name);
+    cout << "The name is: " << name;
+    return 0;
+}
+/*
+Expected result:
+
+Please input a name: 
+George Washington
+The name is: George Washington 
+
+Please input a name: 
+Franklin Delano Roosevelt
+The name is: Franklin Delano Roosevelt 
+
+*/
+
+
+
+
+/*
+Assignment C, Part 3
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+
+int locate(char, string);
+
+int main(){
+    string name;
+    cout << "Please input a name: " << endl;
+    getline(cin, name);
+    cout << "The initials are " << name.at(0) << name.at(locate(' ', name)+1);
+    
+    return 0;
+}
+
+int locate(char a, string b){
+   for (unsigned int i = 0; i < b.length(); i++){
+       if (b.at(i) == a){return i;}
+       }
+    return 0;
+}
+
+
+
+/*
+Expected result:
+
+Please input a name: 
+Harry Truman
+The initials are HT
+
+*/
+
+
+

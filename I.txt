@@ -1,0 +1,55 @@
+/*
+Assignment I part 1
+*/
+#include <iostream>
+
+using namespace std;
+
+int main(){
+	int array[4,6,9,12];
+	for (int i = 0; i < array.size(); i++){
+		sum += array[i];
+	}
+	for (int a = 0; a < array.size(); a++){
+		if (a == array.size()-1){
+			cout << array[a] <<  " = ";
+		}
+		else{
+			cout << array[a] <<  " +  ";
+		}
+	}
+	cout << sum;
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,204 @@
+/*
+Assignment H, Part 1
+*/
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void getData();
+void computeTotal();
+void printAll();
+
+int first, second, third, total;
+
+int main()
+{
+   
+    getData();
+    computeTotal();
+    printAll();
+
+    return 0;
+}
+
+void getData(){
+    cout << "Please input 3 integers: ";
+    cin >> first;
+    cin >> second;
+    cin >> third;
+    }
+
+void computeTotal(){
+    total = first+second+third;
+    }
+
+void printAll(){
+    cout << first << " + " << second << " + " << 
+    third << " = " << total << endl;
+    }
+    
+/*
+Results:
+Please input 3 integers: 4 5 6
+4 + 5 + 6 = 15
+*/
+
+
+/*
+Assignment H, Part 2
+*/
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void getData();
+void computeTotal(int a, int b);
+void computeTotal(int a, int b, int c);
+void computeTotal(int a, int b, int c, int d);
+void computeTotal(double a, double b);
+void printAll(double a, double b);
+void printAll(int a, int b, int c = 0);
+void printAll(int a, int b, int c, int d);
+void printAll(int a, int b, int c, int d, int e);
+void printAll(int a, int b, int c, double d);
+
+int first, second, third, fourth, total;
+double decimalOne, decimalTwo, decimalTotal;
+
+int main()
+{
+    getData();
+
+    computeTotal(first, second);
+    printAll(first, second);
+
+    computeTotal(first, second, third);
+    printAll(first, second, third);
+
+    computeTotal(first, second, third, fourth);
+    printAll(first, second, third, fourth);
+
+    computeTotal(decimalOne, decimalTwo);
+    printAll(decimalOne, decimalTwo);
+
+    return 0;
+}
+
+void getData(){
+    cout << "Please input 4 integers and then 2 decimal values: ";
+    cin >> first;
+    cin >> second;
+    cin >> third;
+    cin >> fourth;
+    cin >> decimalOne;
+    cin >> decimalTwo;
+    }
+
+void computeTotal(int a, int b){
+    total = a + b;
+}
+void computeTotal(int a, int b, int c = 0){
+    total =  a + b + c;
+    }
+
+void computeTotal(int a, int b, int c, int d){
+    total = a + b + c + d;
+    }
+
+void computeTotal(double a, double b){
+    decimalTotal = a + b;
+    }
+void printAll(int a, int b, int c)
+{
+    if (c == 0){
+            cout << a << " + " << b << " = " << total << endl;
+
+        }
+    else{
+        cout << a << " + " << b << " + " <<
+        c << " = " << total << endl;
+
+        }
+    }
+void printAll(int a, int b, int c, int d)
+{
+    cout << a << " + " << b << " + " <<
+    c << " + " << d << " = " << total << endl;
+    }
+
+void printAll(int a, int b, int c, int d, int e)
+{
+    cout << a << " + " << b << " + " <<
+    c << " + " << d << " + " << d << " + " << e << " = " << total << endl;
+    }
+
+void printAll(int a, int b, int c, double d)
+{
+    cout << a << " + " << b << " + " <<
+    c << " + " << d << " = " << total << endl;
+    }
+void printAll(double a, double b)
+{
+    cout << a << " + " << b << " = " << decimalTotal << endl;
+    }
+
+/*
+Expected Results:
+Please input 4 integers and then 2 decimal values: 4 5 6 7 8.1234 9.5678
+4 + 5 = 9
+4 + 5 + 6 = 15
+4 + 5 + 6 + 7 = 22
+8.1234 + 9.5678 = 17.6912
+
+Process returned 0 (0x0) execution time : 5.459 s
+Press any key to continue.
+*/    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,183 @@
+/*
+Assignment G, Part 1
+*/
+#include <iostream>
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
+#include <fstream>
+using namespace std;
+int main()
+{
+    string line;
+    double a, q, sum;
+    int greatest, smallest;
+    q = sum = 0;
+    ifstream file;
+    file.open("data.txt");
+    if (file.is_open()){
+        file >> smallest;
+        file >> greatest;
+        q+=2;
+        while (file >> a){
+            q++;
+            if (greatest < a){greatest = a;}
+            if (smallest > a){smallest = a;}
+            sum += a;
+        }
+    }
+    else{cout << "No file";}
+    file.close();
+    double average = sum/q;
+    cout << "\n" << "There are " << q << " integers in the file." << endl;
+    cout << "The sum of all the integers is " << sum << endl;
+    cout << "Greatest number is " << greatest << endl;
+    cout << "Smallest number is " << smallest << endl;
+    cout << "Average of File is " << average << endl;
+    return 0;
+}
+
+
+/*
+Expected Results;
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Assignment G, Part 2
+*/
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+//*****forward declaration of sum function*****
+int sum(int a, int b);
+    
+int main()
+{
+    int a,b;
+    bool run = true;
+    do{
+    cout << "Please input two integers between 0 and 20 to be added: ";
+    cin >> a;
+    cin >> b;
+    if (a > 0 && b > 0 && a <= 20 & b <= 20){
+        run = false;
+        }
+    } while (run)
+    cout <<"The sum of those two integers is: " << sum(a,b);
+    return 0;
+    
+}
+
+//*****receives two integer parameters and outputs the sum of both integers*****
+int sum(int a, int b)
+{
+    return a+b;        
+}
+
+
+
+
+
+
+
+
+
+/*
+Expected Results;
+
+
+*/
+
+
+
+
+
+/*
+Assignment G, Part 3
+*/
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+//*****forward declaration of functions*****
+double findSum(double a, double b, double c);
+double findAverage(double a, double b, double c);
+double findSmallest(double a, double b, double c);
+    
+int main()
+{
+    double a,b,c;
+    cout << "Please input three integers: ";
+    cin >> a;
+    cin >> b;
+    cin >> c;
+    cout << "First Number: " << setw(15) << a << endl;
+    cout << "Second Number: " << setw(14) << b << endl;
+    cout << "Third Number: " << setw(15) << c << endl;
+    cout << "Total: " << setw(22) << fixed << setprecision(2) << findSum(a,b,c) << endl;
+    cout << "Average: " << setw(20) << fixed << setprecision(2) << findAverage(a,b,c) << endl;
+    cout << "Smallest: " << setw(19) << fixed << setprecision(2) << findSmallest(a,b,c) << endl;
+    return 0;
+    
+}
+
+//*****receives three integer parameters and returns the sum of the integers*****
+double findSum(double a, double b, double c)
+{
+    return a+b+c;        
+}
+//*****receives three double parameters and returns the average of the integers*****
+double findAverage(double a, double b, double c)
+{
+    double average = ((a + b + c)/3);
+    return average;
+}
+
+//*****receives three integer parameters and returns the smallest value of the integers*****
+double findSmallest(double a, double b, double c)
+{
+//equivalent to 3 if statements. ? operator requires less memory to operate, and is therefore quicker.
+    return (a<((b<c)?(b):(c)))?(a):((b<c)?(b):(c));
+}
+/*
+Results:
+Please input three integers: 37.144 2.4144 19
+First Number:          37.144
+Second Number:         2.4144
+Third Number:              19
+Total:                  58.56
+Average:                19.52
+Smallest:              2.4144
+
+Please input three integers: 4.23 5.78 6.21
+First Number:            4.23
+Second Number:           5.78
+Third Number:            6.21
+Total:                  16.22
+Average:                 5.41
+Smallest:                4.23
+ 
+*/

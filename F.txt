@@ -1,0 +1,279 @@
+/*
+Assignment F, Part 1
+*/
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int main()
+{
+    int int_1, int_2;
+    bool check = true;
+    do{
+        cout << "Please input a first number between 1 and 20" << endl;
+        cin >> int_1;
+        cout << "Please input a second number between 1 and 20" << endl;
+        cin >> int_2;
+        if (int_2 < 1 || int_2 > 20 || int_2 < int_1){
+            if (int_2 < int_1){
+                cout << "The second number must be greater than or equal to the first" << endl;
+                }
+            if (int_1 > 20 || int_2 > 20){cout << "Both integers must be between 1 and 20" << endl;}
+            cout << endl;
+            }
+        if (int_2 >= int_1 && int_1 <= 20 && int_2 <= 20){check = false;}
+        } while (check);
+    cout << "INTEGER" << setw(15) << "SQUARE ROOT" << endl;
+    for (int i = int_1; i <= int_2; i++){
+        cout << setw(7) << i << setw(15) << fixed << setprecision(4) << sqrt(i) << endl; 
+        }  
+    return 0;   
+}
+/*
+Expected Results:
+Please input a first number between 1 and 20
+2
+Please input a second number between 1 and 20
+0
+The second number must be greater than or equal to the first
+Please input a first number between 1 and 20
+2
+Please input a second number between 1 and 20
+4
+INTEGER    SQUARE ROOT
+      2         1.4142
+      3         1.7321
+      4         2.0000
+      
+Please input a first number between 1 and 20
+21
+Please input a second number between 1 and 20
+5
+The second number must be greater than or equal to the first
+Both integers must be between 1 and 20
+
+Please input a first number between 1 and 20
+5
+Please input a second number between 1 and 20
+5
+INTEGER    SQUARE ROOT
+      5         2.2361     
+*/
+
+
+
+/*
+Assignment F, Part 2
+*/
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    double speed, time;
+    cout << "Please input the speed of the Vehicle: ";
+    cin >> speed;
+    cout << "Please input the number of hours travelled: ";
+    cin >> time;
+    cout << "Hour" << setw(20) << "Distance Traveled" << endl;
+    cout << "________________________" << endl << endl;
+    for (int i = 1; i <= time; i++){
+        cout << i << setw(15) << fixed << setprecision(2) << (speed * i) << endl;
+        }
+}
+
+
+/*
+Assignment F, Part 3
+*/
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+int option, var_1;
+bool run = true;
+int main()
+{
+    do{
+        var_1 =  0;
+        cout << "Please input the number of the function you want:" << endl;
+        cout << "1. Square   pattern" << endl;
+        cout << "2. Triangle pattern" << endl;
+        cout << "3. Diagonal Pattern" << endl;
+        cout << "4. Reverse Diagonal Pattern" << endl;
+        cout << "5. Quit" << endl;
+        cout << endl;
+        cout << "Enter: ";
+        cin >> option;
+        if (option == 1){
+            sq_chk_1:
+                cout << "Please input a length for the square: ";
+                cin >> var_1;
+                if (var_1 < 0 || var_1 > 9){
+                    cout << "Number is not in range of 1-9" << endl; cout << endl;
+                    goto sq_chk_1;
+                    }
+                cout << endl;
+                for (int a = 0; a < var_1; a++){
+                    for (int b = 0; b < var_1; b++){
+                        cout << var_1;
+                        }
+                    cout << endl;
+                    }
+            }
+        else if (option == 2){
+            tr_chk_1:
+                cout << "Please input a length for the triangle: ";
+                cin >> var_1;
+                if (var_1 < 0 || var_1 > 9){
+                    cout << "Number is not in range of 1-9" << endl; cout << endl;
+                    goto tr_chk_1;
+                    }
+                cout << endl;
+                for (int a = 0; a < var_1; a++){
+                    for (int b = 0; b <= a; b++){
+                        cout << var_1;
+                        }
+                    cout << endl;
+                    }
+            }
+        else if (option == 3){
+            nu_chk_1:
+                cout << "Please input a length for the square: ";
+                    cin >> var_1;
+                    if (var_1 < 0 || var_1 > 9){
+                        cout << "Number is not in range of 1-9" << endl; cout << endl;
+                        goto nu_chk_1;
+                        }
+                    cout << endl;
+                    for (int a = 0; a < var_1; a++){
+                        for (int b = 0; b < var_1; b++){
+                            if (b == a ){cout << var_1;}
+                            else{cout << "*";}
+                        }
+                        cout << endl;
+                    }
+                }  
+        else if (option == 4){
+            re_chk_1:
+            cout << "Please input a length for the square: ";
+                cin >> var_1;
+                if (var_1 < 0 || var_1 > 9){
+                    cout << "Number is not in range of 1-9" << endl; cout << endl;
+                    goto re_chk_1;
+                    }
+                cout << endl;
+                for (int a = 0; a < var_1; a++){
+                    for (int b = 0; b < var_1; b++){
+                        if (var_1 - b-1 == a ){cout << var_1;}
+                        else{cout << "*";}
+                    }
+                    cout << endl;
+                }
+            }
+            
+        else if (option == 5){run = false;}
+        else {cout << "Invalid Input. Please input a valid number." << endl;}
+        cout << endl;
+        } while(run);
+        cout << "Program has quit.";
+    return 0;   
+}
+/*
+Expected Results:
+Please input the number of the function you want:
+1. Square   pattern
+2. Triangle pattern
+3. Diagonal Pattern
+4. Reverse Diagonal Pattern
+5. Quit
+
+Enter: 9
+Invalid Input. Please input a valid number.
+
+Please input the number of the function you want:
+1. Square   pattern
+2. Triangle pattern
+3. Diagonal Pattern
+4. Reverse Diagonal Pattern
+5. Quit
+
+Enter: 1
+Please input a length for the square: 11
+Number is not in range of 1-9
+
+Please input a length for the square: 3
+
+333
+333
+333
+
+Please input the number of the function you want:
+1. Square   pattern
+2. Triangle pattern
+3. Diagonal Pattern
+4. Reverse Diagonal Pattern
+5. Quit
+
+Enter: 2
+Please input a length for the triangle: 4
+
+4
+44
+444
+4444
+
+Please input the number of the function you want:
+1. Square   pattern
+2. Triangle pattern
+3. Diagonal Pattern
+4. Reverse Diagonal Pattern
+5. Quit
+
+Enter: 3
+Please input a length for the square: 5
+
+5****
+*5***
+**5**
+***5*
+****5
+
+Please input the number of the function you want:
+1. Square   pattern
+2. Triangle pattern
+3. Diagonal Pattern
+4. Reverse Diagonal Pattern
+5. Quit
+
+Enter: 4
+Please input a length for the square: 6
+
+*****6
+****6*
+***6**
+**6***
+*6****
+6*****
+
+Please input the number of the function you want:
+1. Square   pattern
+2. Triangle pattern
+3. Diagonal Pattern
+4. Reverse Diagonal Pattern
+5. Quit
+
+Enter: 5
+
+Program has quit. 
+Exit code: 0 (normal program termination)
+
+*/
+
+

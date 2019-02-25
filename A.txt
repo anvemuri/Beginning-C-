@@ -1,0 +1,19 @@
+
+#include<iostream>
+using namespace std;
+int main() {
+   double a, product;
+   double b;
+   cout << "Enter a decimal number: ";
+   cin >> a; 
+   cout << "Enter a integral number: ";
+   cin >> b; 
+   product = a*b;
+   cout << a << " * " << b << " = " << product << endl;
+}
+
+/*
+Execution Results:
+3.14159 * 2 = 6.28318
+*/
+
